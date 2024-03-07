@@ -1,0 +1,11 @@
+{
+  "name": "node-prueba",
+  "version": "1.0.0",
+  "description": "Test para probar la instalacion de Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yo",
+  "license": "ISC"
+}
