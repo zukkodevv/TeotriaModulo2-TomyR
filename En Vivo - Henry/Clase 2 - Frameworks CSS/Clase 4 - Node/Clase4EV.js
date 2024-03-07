@@ -46,8 +46,38 @@
 
 //TIP: Dependencias; Las dependencias de desarrollo de Node instalados con un -D extra es una dependencia que solo afecta para los desarrolladores, osea solo nos sirve a nosotros.
 
-//TIP: Instalaciones globales - No es recomendable instalar las dependencias de forma global ya que en la actualización de la dependencia, nuestra aplicación se rompería totalmente sí llegara a ser muy drástica, por ejemplo, si usamos Jasmine instalado de manera global en la versión 5.2.4 y meses después de terminar nuestro proyecto se actualiza a 6.0.0 nuestro proyecto se rompe totalmente y requiere una migración.
+//TIP: Instalaciones globales - No es recomendable instalar las dependencias de forma global ya que en la actualización de la dependencia, nuestra aplicación se rompería totalmente sí llegara a ser muy drástica, por ejemplo, si usamos Jasmine instalado de manera global en la versión 5.2.4 y meses después de terminar nuestro proyecto se actualiza a 6.0.0 nuestro proyecto se rompe totalmente y requiere una migración. (-g es para instalación con dependencia Global)
 
 //^^ Modularización con Node
 
 //* Cada módulo apunta a realizar una funcionalidad especifica, en su conjunto ayudan a gestionar de manera mucho más efectiva y organizada un proyecto.
+
+//^^ Ventajas y Desventajas de la Modularización
+
+//** El mantenimiento, la escalabilidad, reutilización, organización, encapsulación; Con la modularización es mucho más fácil sobretodo la reutilización del código, la resolución independiente de cada módulo que falle para no tener que hacer un cambio drástico en un archivo que encapsule todo el código y poder organizarlo de una forma mucho más legible visualmente.
+
+//* Desventajas: Empaquetamiento, administración de dependencias; Es complicado administrar cuál módulo depende de cuál y cuál se exporta a cuál lo que aumenta la complejidad del código y hace que sea más complejo de ser para el programador convirtiendose en el temido "código spaghetti".
+
+//^^ Caracteristicas //!(Importante)
+
+//* Las variables y funciones son locales -> Para que esten disponibles hay que exportarlos
+
+//* Se debe usar el objeto "exports.module"
+
+//* Se utiliza "require" para requerir funcionalidades de otros archivos
+
+//^^ Explicado a profundidad en la práctica
+
+//? ¿Que es NODE JS?
+
+//* Es una libreria open source que incluye muchos módulos, los módulos esta diseñados para ayudar con la aplicación, reduce la cantidad de código y lógica y reutiliza códigos creados por terceros, cómo se ve funciona de unna forma casi identica a npm.
+
+//^^ Versionado
+
+//* El versionado sigue unas normas semanticas, 1.3.4 cada número después de un "." representa un cambio, los principales puntos ["1."3.4 --> Son cambios mayores que cambian cosas importanes (Nombre, proposito, etc), el que esta después del principal es el menor 1."3."4 --> Representa cambios menores cómo nuevas funciones o hacerlo retro-compatibles, y por último tenemos el patch:   1.3".4" que refiere a un parche que corrige bugs o errores de compatibilidad.]
+
+//^^ Compatibilidad
+
+//* Los parches y las actualizaciones menores son compatibles con otras versiones 1."3.4" pero los mayores no son compatibles (my mayormente) con otras versiones "1."3.4 --> 1.3.4 no es compatible con 2.1 pero 1.6.1 es compatible con 1.3.4
+
+//* Uso del ^: Esto se utiliza en el package.json para poder indicar las versiones que se requieren, sí se usa, se actualiza el proyecto pero solo los versionados menores y de parche, NÚNCA cambiando la versión mayor ya que rompería el código (esto lo hace el código solo) y sí no pusieramos "^" pediriamos la versión exacta que no se actualizaria.
