@@ -42,14 +42,21 @@ describe("función de suma", () => {
     expect(mockSumar(1, true)).toBe(null);
     expect(mockSumar(false, 10)).toBe(null);
     expect(mockSumar("hola", "chau")).toBe(null);
+    //* Ahora todas los tsts que solían ejecutar a sumar() ahora ejecutan a su imitación, mockSumar, que es exactamente la misma función que sumar pero con nuevas propiedades referentes al testing que nos daran mayor información.
   });
   it("Debe retornar la suma correctamente", () => {
     expect(mockSumar(10, 15)).toBe(25);
     expect(mockSumar(0, 0)).toBe(0);
     expect(mockSumar(-8, 8)).toBe(0);
     expect(mockSumar(-20, -30)).toBe(-50);
+    //* Seguimos implementando la función mock de sumar para hacer los tests en lugar de la original sumar()
     console.log(mockSumar.mock);
     //* Acá le decimos al código que haga un console log de mockSumar con el atributo mock, esto devolvera todos los procesos que siguieron los tests, los valores que se mandaron y otras cosas.
+
+    it("Debe haber registrado correctamente los parametros 10 y 15", () => {
+      expect(mockSumar).toHabeBeenCalledWith(10, 15);
+      //* Le decimos al test que esperamos que la función mock de sumar ya haya sido llamada en algún momento con los parametros 10 y 15, y que retorne true sí es cierto.
+    });
   });
 });
 

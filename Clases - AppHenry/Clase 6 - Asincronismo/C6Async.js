@@ -56,6 +56,15 @@ console.log(promesa); // Promise { <pending> } -- Devuelve la función y su esta
 
 //^ Métodos Then & Catch
 
-//* Estos dos son los métodos que nos ayudaran a poder controlar la devolución de las promesas, con el método then{} podremos manejar la lógica en caso de haber sido resuelta correctamente la petición. Pero caso contrario usaremos catch{} para manejar la lógica que se debe seguir en caso de que la petición haya sido rechazada.
+//* Estos dos son los métodos que nos ayudaran a poder controlar la devolución de las promesas, con el método .then() podremos manejar la lógica en caso de haber sido resuelta correctamente la petición. Pero caso contrario usaremos .catch() para manejar la lógica que se debe seguir en caso de que la petición haya sido rechazada.
 
-//! V3 - 
+//! T3 - Async/Await
+
+//^ ¿Qué es?
+
+//* Es una caracteristica de javascript para poder reemplazar de forma más sencilla las promesas, evitando el .then() y .catch() y evitando crear una instancia promise, en su lugar se usa una función a la que antes de definirla le declararemos la caracterista async. > async function miFuncion(parametros).
+//* Esto le dice a javascript que va a trabajar con código asincronico, para que la ejecucción del resto de código no se detenga, también dentro de la función asincronica tendremos acceso a un método especial de ellas, el await que indicara que se debe esperar que se resuelva una promesa para continuar con el código.
+
+//^ Los nuevos .Try() y .Catch()
+
+//* Ahora que cambiamos la promesa por una una función asincrona, el método .then() ya no puede usarse cómo manejador de exito, en su lugar aparece el nuevo método .try(), dentro de él ira la lógica a ejecutar sí todo ocurre correctamente, caso contrario el método .try() se cancelara y se ejecutra .catch() que en su interior ejecutara la lógica para manejar el error.

@@ -41,9 +41,3 @@
 //! T4 - MOCK FUNCTIONS
 
 //* Mock de por sí significa "imitación" y es justamente lo que hace una mock function, imita el código sin tener que correrlo de forma completa, sí no que solo aislando una función o clase y designandole una mockk function que la imite y así verificar que se ejecute correctamente.
-
-//! V4 - COMO FUNCIONAN LAS MOCK FUNCTIONS
-
-//* Cuándo hay funciones que son afectadas por su contexto o otras funciones de su código y queremos verificarla independientemente es muy útil crear una mock function que la aisle y compruebe de forma apartada.
-
-//* Realizado con la actividad demo-jest

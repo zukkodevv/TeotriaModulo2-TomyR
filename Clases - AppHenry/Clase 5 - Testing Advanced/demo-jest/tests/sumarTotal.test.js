@@ -10,6 +10,7 @@ describe("la función cacularTotal", () => {
     ).toEqual(20);
     //* Se espera que al ejecutar la función calcularTotal con este objeto se retorne 20.
   });
+
   it("debe calcular el total de la factura con varios item", () => {
     expect(
       calcularTotal([
